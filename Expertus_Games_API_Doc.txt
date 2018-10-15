@@ -1,0 +1,51 @@
+Expertus Games
+--------------
+Micro API pour proposer des challenges pour l'activité mensuel de l'équipe Expertus.
+
+
+Description de l'api
+--------------------
+
+GET http://localhost:8080/api/challenge/
+
+Retourne tous les Challenges en BD
+
+--------------------
+
+GET http://localhost:8080/api/challenge/5bc401c91ced95171055a257
+
+Retourne le Challenge avec l'id: 5bc401c91ced95171055a257
+
+--------------------
+
+POST http://localhost:8080/api/challenge/
+
+Pour creer un Challenge en BD
+Mettre dans le Body de l'appel un JSON sur le model suivant:
+{
+	"id": "",
+	"proposerEmail": "jack@email.com",
+	"title": "Course a pied",
+	"description": "Faire le tours du parc 10 fois",
+	"url": "www.parc.com"
+}
+
+--------------------
+
+PUT http://localhost:8080/api/challenge/
+
+Pour modifier un Challenge en BD
+Mettre dans le Body de l'appel un JSON sur le model suivant avec l'id d'un challenge:
+{
+	"id": "5bc402801ced95171055a25b",
+	"proposerEmail": "roxane@email.com",
+	"title": "Marthon",
+	"description": "Marathon de Montreal en ete",
+	"url": "www.marthon.com"
+}
+
+--------------------
+
+DELETE PUT http://localhost:8080/api/challenge/5bc402801ced95171055a25b
+
+Efface de la BD le Challenge avec l'id: 5bc402801ced95171055a25b
